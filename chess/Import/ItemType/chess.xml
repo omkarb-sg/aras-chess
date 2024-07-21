@@ -1,0 +1,249 @@
+﻿<AML>
+ <Item type="ItemType" id="BEE3F6B22EB84E219AA1AA2DE5FB84A3" action="add">
+  <allow_private_permission>1</allow_private_permission>
+  <auto_search>0</auto_search>
+  <enforce_discovery>1</enforce_discovery>
+  <hide_where_used>0</hide_where_used>
+  <implementation_type>table</implementation_type>
+  <instance_data>CHESS</instance_data>
+  <is_dependent>0</is_dependent>
+  <is_relationship>0</is_relationship>
+  <is_versionable>0</is_versionable>
+  <label xml:lang="en">Chess</label>
+  <label_plural xml:lang="en">Chess</label_plural>
+  <large_icon>https://cdn.pixabay.com/photo/2012/04/18/00/41/chess-36307__180.png</large_icon>
+  <open_icon>https://cdn.pixabay.com/photo/2012/04/18/00/41/chess-36307__180.png</open_icon>
+  <revisions keyed_name="Default" type="Revision">7FE395DD8B9F4E1090756A34B733D75E</revisions>
+  <show_parameters_tab>0</show_parameters_tab>
+  <structure_view>tabs on</structure_view>
+  <unlock_on_logout>0</unlock_on_logout>
+  <use_src_access>0</use_src_access>
+  <name>chess</name>
+  <Relationships>
+   <Item type="Property" id="ACD55C25C6A045C28FADDC33AC3417B4" action="add">
+    <column_alignment>left</column_alignment>
+    <data_type>string</data_type>
+    <is_federated>1</is_federated>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">chess_move</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>3072</sort_order>
+    <source_id keyed_name="chess" type="ItemType" name="chess">BEE3F6B22EB84E219AA1AA2DE5FB84A3</source_id>
+    <stored_length>8</stored_length>
+    <track_history>0</track_history>
+    <name>chess_move</name>
+   </Item>
+   <Item type="Property" id="CA551D0162A74EC68A1F569B7F342B71" action="add">
+    <column_alignment>left</column_alignment>
+    <data_type>string</data_type>
+    <is_federated>1</is_federated>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <label xml:lang="en">Next to move</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>3200</sort_order>
+    <source_id keyed_name="chess" type="ItemType" name="chess">BEE3F6B22EB84E219AA1AA2DE5FB84A3</source_id>
+    <stored_length>12</stored_length>
+    <track_history>0</track_history>
+    <name>next_to_move</name>
+   </Item>
+   <Item type="View" id="0D95F0961F0D4CD9A0748C6639BC6FB8" action="add">
+    <client>js</client>
+    <related_id keyed_name="chess_add" type="Form">407A65F27CED4719AF77A1D293860260</related_id>
+    <role keyed_name="World" type="Identity">
+     <Item type="Identity" action="get" select="id">
+      <name>World</name>
+     </Item>
+    </role>
+    <show_ssvc>0</show_ssvc>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="chess" type="ItemType" name="chess">BEE3F6B22EB84E219AA1AA2DE5FB84A3</source_id>
+    <type>add</type>
+   </Item>
+   <Item type="View" id="B3C538798AF245579DE96CFF71261556" action="add">
+    <client>js</client>
+    <related_id keyed_name="chess" type="Form">EFD1D1EF33364FDEB3C7CED5C10552AB</related_id>
+    <role keyed_name="World" type="Identity">
+     <Item type="Identity" action="get" select="id">
+      <name>World</name>
+     </Item>
+    </role>
+    <show_ssvc>0</show_ssvc>
+    <sort_order>256</sort_order>
+    <source_id keyed_name="chess" type="ItemType" name="chess">BEE3F6B22EB84E219AA1AA2DE5FB84A3</source_id>
+    <type>default</type>
+   </Item>
+   <Item type="Server Event" id="7501F09B16EA41EABDA642DF5F3FC6B6" action="add">
+    <event_version>version_1</event_version>
+    <is_required>0</is_required>
+    <related_id keyed_name="chessGameName" type="Method">
+     <Item type="Method" action="get" select="id">
+      <name>chessGameName</name>
+     </Item>
+    </related_id>
+    <server_event>GetKeyedName</server_event>
+    <sort_order>512</sort_order>
+    <source_id keyed_name="chess" type="ItemType" name="chess">BEE3F6B22EB84E219AA1AA2DE5FB84A3</source_id>
+   </Item>
+   <Item type="Server Event" id="577E772C573342CA9AFDA5336DAD790C" action="add">
+    <event_version>version_1</event_version>
+    <is_required>0</is_required>
+    <related_id keyed_name="chessSetupBoard" type="Method">
+     <Item type="Method" action="get" select="id">
+      <name>chessSetupBoard</name>
+     </Item>
+    </related_id>
+    <server_event>onAfterAdd</server_event>
+    <sort_order>640</sort_order>
+    <source_id keyed_name="chess" type="ItemType" name="chess">BEE3F6B22EB84E219AA1AA2DE5FB84A3</source_id>
+   </Item>
+   <Item type="Server Event" id="9BEA791EE0B148CAA943B6ACDA4060F6" action="add">
+    <event_version>version_1</event_version>
+    <is_required>0</is_required>
+    <related_id keyed_name="chessGetGameInfo" type="Method">
+     <Item type="Method" action="get" select="id">
+      <name>chessGetGameInfo</name>
+     </Item>
+    </related_id>
+    <server_event>onAfterGet</server_event>
+    <sort_order>928</sort_order>
+    <source_id keyed_name="chess" type="ItemType" name="chess">BEE3F6B22EB84E219AA1AA2DE5FB84A3</source_id>
+   </Item>
+   <Item type="Server Event" id="C7580EB2085143C48647A7880C6047B9" action="add">
+    <event_version>version_1</event_version>
+    <is_required>0</is_required>
+    <related_id keyed_name="chessInitRow" type="Method">
+     <Item type="Method" action="get" select="id">
+      <name>chessInitRow</name>
+     </Item>
+    </related_id>
+    <server_event>onBeforeAdd</server_event>
+    <sort_order>384</sort_order>
+    <source_id keyed_name="chess" type="ItemType" name="chess">BEE3F6B22EB84E219AA1AA2DE5FB84A3</source_id>
+   </Item>
+   <Item type="Server Event" id="691B9983591E479F917088666AAB3012" action="add">
+    <event_version>version_1</event_version>
+    <is_required>0</is_required>
+    <related_id keyed_name="chessPreventLock" type="Method">
+     <Item type="Method" action="get" select="id">
+      <name>chessPreventLock</name>
+     </Item>
+    </related_id>
+    <server_event>onBeforeLock</server_event>
+    <sort_order>256</sort_order>
+    <source_id keyed_name="chess" type="ItemType" name="chess">BEE3F6B22EB84E219AA1AA2DE5FB84A3</source_id>
+   </Item>
+   <Item type="Server Event" id="F83F8C0630DC491EA895143774EC5E50" action="add">
+    <event_version>version_1</event_version>
+    <is_required>0</is_required>
+    <related_id keyed_name="chessMakeMove" type="Method">
+     <Item type="Method" action="get" select="id">
+      <name>chessMakeMove</name>
+     </Item>
+    </related_id>
+    <server_event>onBeforeUpdate</server_event>
+    <sort_order>768</sort_order>
+    <source_id keyed_name="chess" type="ItemType" name="chess">BEE3F6B22EB84E219AA1AA2DE5FB84A3</source_id>
+   </Item>
+   <Item type="ItemType Life Cycle" id="EDFD696637894D5982196758AE804A1C" action="add">
+    <related_id keyed_name="chess" type="Life Cycle Map">A40A15DE2C1C43C49F4941144BF5DF24</related_id>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="chess" type="ItemType" name="chess">BEE3F6B22EB84E219AA1AA2DE5FB84A3</source_id>
+   </Item>
+   <Item type="Can Add" id="3D791B45D9694867B4C63788776F2EB1" action="add">
+    <can_add>1</can_add>
+    <related_id keyed_name="World" type="Identity">
+     <Item type="Identity" action="get" select="id">
+      <name>World</name>
+     </Item>
+    </related_id>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="chess" type="ItemType" name="chess">BEE3F6B22EB84E219AA1AA2DE5FB84A3</source_id>
+   </Item>
+   <Item type="Allowed Permission" id="D39D0A5D8CA54B1883192B5ADC816D78" action="add">
+    <is_default>1</is_default>
+    <related_id keyed_name="chess" type="Permission">905C3589563F46879258F0C39FF1520F</related_id>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="chess" type="ItemType" name="chess">BEE3F6B22EB84E219AA1AA2DE5FB84A3</source_id>
+   </Item>
+  </Relationships>
+ </Item>
+ <Item type="ItemType" id="BEE3F6B22EB84E219AA1AA2DE5FB84A3" action="edit">
+  <Relationships>
+   <Item type="Property" action="edit" where="source_id='BEE3F6B22EB84E219AA1AA2DE5FB84A3' and name='created_by_id'">
+    <column_alignment>left</column_alignment>
+    <data_source keyed_name="User" type="ItemType" name="User">45E899CD2859442982EB22BB2DF683E5</data_source>
+    <data_type>item</data_type>
+    <is_federated>0</is_federated>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>1</is_required>
+    <item_behavior>float</item_behavior>
+    <keyed_name_order>1</keyed_name_order>
+    <label xml:lang="en">Arbiter</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>1</readonly>
+    <sort_order>640</sort_order>
+    <source_id keyed_name="chess" type="ItemType" name="chess">BEE3F6B22EB84E219AA1AA2DE5FB84A3</source_id>
+    <track_history>0</track_history>
+    <name>created_by_id</name>
+   </Item>
+   <Item type="Property" action="edit" where="source_id='BEE3F6B22EB84E219AA1AA2DE5FB84A3' and name='managed_by_id'">
+    <column_alignment>left</column_alignment>
+    <data_source keyed_name="Identity" type="ItemType" name="Identity">E582AB17663F4EF28460015B2BE9E094</data_source>
+    <data_type>item</data_type>
+    <is_federated>0</is_federated>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <item_behavior>float</item_behavior>
+    <keyed_name_order>3</keyed_name_order>
+    <label xml:lang="en">Black Player</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>896</sort_order>
+    <source_id keyed_name="chess" type="ItemType" name="chess">BEE3F6B22EB84E219AA1AA2DE5FB84A3</source_id>
+    <track_history>0</track_history>
+    <name>managed_by_id</name>
+   </Item>
+   <Item type="Property" action="edit" where="source_id='BEE3F6B22EB84E219AA1AA2DE5FB84A3' and name='owned_by_id'">
+    <column_alignment>left</column_alignment>
+    <data_source keyed_name="Identity" type="ItemType" name="Identity">E582AB17663F4EF28460015B2BE9E094</data_source>
+    <data_type>item</data_type>
+    <is_federated>0</is_federated>
+    <is_hidden>0</is_hidden>
+    <is_hidden2>0</is_hidden2>
+    <is_indexed>0</is_indexed>
+    <is_keyed>0</is_keyed>
+    <is_multi_valued>0</is_multi_valued>
+    <is_required>0</is_required>
+    <item_behavior>float</item_behavior>
+    <keyed_name_order>2</keyed_name_order>
+    <label xml:lang="en">White Player</label>
+    <range_inclusive>0</range_inclusive>
+    <readonly>0</readonly>
+    <sort_order>768</sort_order>
+    <source_id keyed_name="chess" type="ItemType" name="chess">BEE3F6B22EB84E219AA1AA2DE5FB84A3</source_id>
+    <track_history>0</track_history>
+    <name>owned_by_id</name>
+   </Item>
+  </Relationships>
+ </Item>
+</AML>

@@ -1,0 +1,81 @@
+﻿<AML>
+ <Item type="Life Cycle Map" id="A40A15DE2C1C43C49F4941144BF5DF24" action="add">
+  <start_state keyed_name="In Progress" type="Life Cycle State">D12EE0DE02F44CAEADE3DDBCF7A647DB</start_state>
+  <name>chess</name>
+  <Relationships>
+   <Item type="Life Cycle State" id="06B92F40CBA14A68913A033273824D5C" action="add">
+    <image>../images/LifeCycleState.svg</image>
+    <set_is_released>0</set_is_released>
+    <set_not_lockable>0</set_not_lockable>
+    <sort_order>384</sort_order>
+    <source_id keyed_name="chess" type="Life Cycle Map">A40A15DE2C1C43C49F4941144BF5DF24</source_id>
+    <x>194</x>
+    <y>154</y>
+    <name>Black Won</name>
+   </Item>
+   <Item type="Life Cycle State" id="7B1154A440684F3D96749CD3C0214222" action="add">
+    <image>../images/LifeCycleState.svg</image>
+    <set_is_released>0</set_is_released>
+    <set_not_lockable>0</set_not_lockable>
+    <sort_order>512</sort_order>
+    <source_id keyed_name="chess" type="Life Cycle Map">A40A15DE2C1C43C49F4941144BF5DF24</source_id>
+    <x>198</x>
+    <y>90</y>
+    <name>Draw</name>
+   </Item>
+   <Item type="Life Cycle State" id="D12EE0DE02F44CAEADE3DDBCF7A647DB" action="add">
+    <image>../images/LifeCycleState.svg</image>
+    <set_is_released>0</set_is_released>
+    <set_not_lockable>0</set_not_lockable>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="chess" type="Life Cycle Map">A40A15DE2C1C43C49F4941144BF5DF24</source_id>
+    <x>33</x>
+    <y>92</y>
+    <name>In Progress</name>
+   </Item>
+   <Item type="Life Cycle State" id="692D6DF4D0FA4302A76EC149929A6DAB" action="add">
+    <image>../images/LifeCycleState.svg</image>
+    <set_is_released>0</set_is_released>
+    <set_not_lockable>0</set_not_lockable>
+    <sort_order>256</sort_order>
+    <source_id keyed_name="chess" type="Life Cycle Map">A40A15DE2C1C43C49F4941144BF5DF24</source_id>
+    <x>197</x>
+    <y>12</y>
+    <name>White Won</name>
+   </Item>
+   <Item type="Life Cycle Transition" id="2FFEABC5ABD84EA191B97BBAF107B3E3" action="add">
+    <from_state keyed_name="In Progress" type="Life Cycle State">D12EE0DE02F44CAEADE3DDBCF7A647DB</from_state>
+    <get_comment>0</get_comment>
+    <role keyed_name="Aras Chess" type="Identity">74E2D2E4521544C9941A086295F59D21</role>
+    <segments />
+    <sort_order>384</sort_order>
+    <source_id keyed_name="chess" type="Life Cycle Map">A40A15DE2C1C43C49F4941144BF5DF24</source_id>
+    <to_state keyed_name="Black Won" type="Life Cycle State">06B92F40CBA14A68913A033273824D5C</to_state>
+    <x>65</x>
+    <y>28</y>
+   </Item>
+   <Item type="Life Cycle Transition" id="56EE91013F7945F3BAD5627CC29B7DFF" action="add">
+    <from_state keyed_name="In Progress" type="Life Cycle State">D12EE0DE02F44CAEADE3DDBCF7A647DB</from_state>
+    <get_comment>0</get_comment>
+    <role keyed_name="Aras Chess" type="Identity">74E2D2E4521544C9941A086295F59D21</role>
+    <segments />
+    <sort_order>256</sort_order>
+    <source_id keyed_name="chess" type="Life Cycle Map">A40A15DE2C1C43C49F4941144BF5DF24</source_id>
+    <to_state keyed_name="Draw" type="Life Cycle State">7B1154A440684F3D96749CD3C0214222</to_state>
+    <x>56</x>
+    <y>-3</y>
+   </Item>
+   <Item type="Life Cycle Transition" id="877767ED6213497F88AEA0415091A54A" action="add">
+    <from_state keyed_name="In Progress" type="Life Cycle State">D12EE0DE02F44CAEADE3DDBCF7A647DB</from_state>
+    <get_comment>0</get_comment>
+    <role keyed_name="Aras Chess" type="Identity">74E2D2E4521544C9941A086295F59D21</role>
+    <segments />
+    <sort_order>128</sort_order>
+    <source_id keyed_name="chess" type="Life Cycle Map">A40A15DE2C1C43C49F4941144BF5DF24</source_id>
+    <to_state keyed_name="White Won" type="Life Cycle State">692D6DF4D0FA4302A76EC149929A6DAB</to_state>
+    <x>45</x>
+    <y>-46</y>
+   </Item>
+  </Relationships>
+ </Item>
+</AML>

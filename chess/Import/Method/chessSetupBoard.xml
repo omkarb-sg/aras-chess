@@ -1,0 +1,63 @@
+﻿<AML>
+ <Item type="Method" id="B7AC63322805448F9476B1CB49E83726" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[// Like this
+// <AML>
+// 	<Item type="chess" action="chessSetupBoard">
+// 		<id>88791F941B9A45A5A504BC1DABCDE0D0</id>
+// 	</Item>
+// </AML>
+
+    string chess = this.getProperty("id");
+    
+    // White
+    placePiece(chess, "k", "1", "e", "white");
+    placePiece(chess, "q", "1", "d", "white");
+    placePiece(chess, "b", "1", "c", "white");
+    placePiece(chess, "b", "1", "f", "white");
+    placePiece(chess, "n", "1", "b", "white");
+    placePiece(chess, "n", "1", "g", "white");
+    placePiece(chess, "r", "1", "a", "white");
+    placePiece(chess, "r", "1", "h", "white");
+    placePiece(chess, "p", "2", "a", "white");
+    placePiece(chess, "p", "2", "b", "white");
+    placePiece(chess, "p", "2", "c", "white");
+    placePiece(chess, "p", "2", "d", "white");
+    placePiece(chess, "p", "2", "e", "white");
+    placePiece(chess, "p", "2", "f", "white");
+    placePiece(chess, "p", "2", "g", "white");
+    placePiece(chess, "p", "2", "h", "white");
+    
+    // Black
+    placePiece(chess, "k", "8", "e", "black");
+    placePiece(chess, "q", "8", "d", "black");
+    placePiece(chess, "b", "8", "c", "black");
+    placePiece(chess, "b", "8", "f", "black");
+    placePiece(chess, "n", "8", "b", "black");
+    placePiece(chess, "n", "8", "g", "black");
+    placePiece(chess, "r", "8", "a", "black");
+    placePiece(chess, "r", "8", "h", "black");
+    placePiece(chess, "p", "7", "a", "black");
+    placePiece(chess, "p", "7", "b", "black");
+    placePiece(chess, "p", "7", "c", "black");
+    placePiece(chess, "p", "7", "d", "black");
+    placePiece(chess, "p", "7", "e", "black");
+    placePiece(chess, "p", "7", "f", "black");
+    placePiece(chess, "p", "7", "g", "black");
+    placePiece(chess, "p", "7", "h", "black");
+    return this;
+}
+
+private void placePiece(string chess, string piece, string rank, string file, string color) {
+    Item args = this.getInnovator().newItem();
+    args.setProperty("chess", chess);
+    args.setProperty("piece", piece);
+    args.setProperty("rank", rank);
+    args.setProperty("file", file);
+    args.setProperty("color", color);
+    this.getInnovator().applyMethod("chessPlacePiece", args.node.InnerXml);
+]]></method_code>
+  <method_type>C#</method_type>
+  <name>chessSetupBoard</name>
+ </Item>
+</AML>

@@ -1,0 +1,156 @@
+﻿<AML>
+ <Item type="Method" id="59909FDD11BA4BF08B573B9E5520305A" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[// Like this
+// <AML>
+// 	<Item type="..." action="chessPlacePiece">
+// 		<chess>88791F941B9A45A5A504BC1DABCDE0D0</chess>
+// 		<piece>c</piece>
+// 		<rank>7</rank>
+// 		<file>b</file>
+// 	</Item>
+// </AML>
+// OR
+// <AML>
+// 	<Item type="..." action="chessPlacePiece">
+// 		<chess>88791F941B9A45A5A504BC1DABCDE0D0</chess>
+// 		<piece>n</piece>
+// 		<rank>7</rank>
+// 		<file>b</file>
+//      <color>black</color>
+// 	</Item>
+// </AML>
+
+string chess = this.getProperty("chess");
+string color = this.getProperty("color", "").ToLower();
+string piece = this.getProperty("piece", "").ToLower();
+string file = this.getProperty("file", "").ToLower();
+string rank = this.getProperty("rank");
+
+switch (piece) {
+    case "k":
+    case "q":
+    case "b":
+    case "r":
+    case "n":
+    case "p":
+    if (color != "white" && color != "black") {
+        return this.getInnovator().newError("Invalid color");
+    }
+    break;
+    case "c":
+    break;
+    default:
+    return this.getInnovator().newError("Invalid piece");
+}
+switch (rank) {
+    case "1":
+    case "2":
+    case "3":
+    case "4":
+    case "5":
+    case "6":
+    case "7":
+    case "8":
+    break;
+    default:
+    return this.getInnovator().newError("Invalid rank");
+}
+switch (file) {
+    case "a":
+    case "b":
+    case "c":
+    case "d":
+    case "e":
+    case "f":
+    case "g":
+    case "h":
+    break;
+    default:
+    return this.getInnovator().newError("Invalid file");
+}
+
+string white_king = "♔";
+string white_queen = "♕";
+string white_rook = "♖"; 	
+string white_bishop = "♗"; 	
+string white_knight = "♘"; 	
+string white_pawn = "♙"; 	
+string black_king = "♚"; 	
+string black_queen = "♛"; 	
+string black_rook = "♜"; 	
+string black_bishop = "♝"; 	
+string black_knight = "♞"; 	
+string black_pawn = "♟";
+string clear = " ";
+
+string piece_emoji = null;
+{ // Collapsable
+    if (color == "white" && piece == "k") {
+        piece_emoji = white_king;
+    }
+    if (color == "white" && piece == "q") {
+        piece_emoji = white_queen;
+    }
+    if (color == "white" && piece == "r") {
+        piece_emoji = white_rook;
+    }
+    if (color == "white" && piece == "b") {
+        piece_emoji = white_bishop;
+    }
+    if (color == "white" && piece == "n") {
+        piece_emoji = white_knight;
+    }
+    if (color == "white" && piece == "p") {
+        piece_emoji = white_pawn;
+    }
+    // End white
+    // Start black
+    if (color == "black" && piece == "k") {
+        piece_emoji = black_king;
+    }
+    if (color == "black" && piece == "q") {
+        piece_emoji = black_queen;
+    }
+    if (color == "black" && piece == "r") {
+        piece_emoji = black_rook;
+    }
+    if (color == "black" && piece == "b") {
+        piece_emoji = black_bishop;
+    }
+    if (color == "black" && piece == "n") {
+        piece_emoji = black_knight;
+    }
+    if (color == "black" && piece == "p") {
+        piece_emoji = black_pawn;
+    }
+    if (piece == "c") {
+        piece_emoji = clear;
+    }
+}
+
+// Get chess rows
+Item row = this.getInnovator().applyAML(@"
+<AML>
+    <Item type=""rel_chess_row"" action=""get"" select=""id"">
+        <source_id>" + chess + @"</source_id>
+        <rank>" + rank + @"</rank>
+    </Item>
+</AML>
+");
+if (row.getItemCount() <= 0) return this.getInnovator().newError("Invalid chess or incorrect row");
+
+this.getInnovator().applyAML(@"
+<AML>
+    <Item type=""rel_chess_row"" action=""edit"" id=""" + row.getAttribute("id") + @""">
+        <" + file + ">" + piece_emoji + @"</" + file + @">
+    </Item>
+</AML>
+");
+
+return this;
+]]></method_code>
+  <method_type>C#</method_type>
+  <name>chessPlacePiece</name>
+ </Item>
+</AML>

@@ -1,0 +1,107 @@
+﻿<AML>
+ <Item type="Form" id="407A65F27CED4719AF77A1D293860260" action="add">
+  <height>234</height>
+  <stylesheet><![CDATA[../styles/default.css]]></stylesheet>
+  <width>699</width>
+  <name>chess_add</name>
+  <Relationships>
+   <Item type="Body" id="7DEDA3F75B7C4AA4BA39CC05D211535B" action="add">
+    <bg_color>#FFFFFF</bg_color>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="chess_add" type="Form">407A65F27CED4719AF77A1D293860260</source_id>
+    <Relationships>
+     <Item type="Field" id="D4B112C175A14A3A9D6C89D9AC24618B" action="add">
+      <border_width>0</border_width>
+      <display_length_unit>px</display_length_unit>
+      <field_type>item</field_type>
+      <font_color>#333333</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Arbitar</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <sort_order>128</sort_order>
+      <source_id keyed_name="7DEDA3F75B7C4AA4BA39CC05D211535B" type="Body">7DEDA3F75B7C4AA4BA39CC05D211535B</source_id>
+      <tab_index>640</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>10</x>
+      <y>10</y>
+      <name>created_by_id</name>
+     </Item>
+     <Item type="Field" id="060E24AC77644A679337402ACFBB51D4" action="add">
+      <border_width>0</border_width>
+      <display_length_unit>px</display_length_unit>
+      <field_type>item</field_type>
+      <font_color>#333333</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Black Player</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <sort_order>384</sort_order>
+      <source_id keyed_name="7DEDA3F75B7C4AA4BA39CC05D211535B" type="Body">7DEDA3F75B7C4AA4BA39CC05D211535B</source_id>
+      <tab_index>896</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>10</x>
+      <y>90</y>
+      <name>managed_by_id</name>
+     </Item>
+     <Item type="Field" id="A5EBBD41A2154E54915D1FB43F1D4CAF" action="add">
+      <border_width>0</border_width>
+      <display_length_unit>px</display_length_unit>
+      <field_type>item</field_type>
+      <font_color>#333333</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">White Player</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <sort_order>256</sort_order>
+      <source_id keyed_name="7DEDA3F75B7C4AA4BA39CC05D211535B" type="Body">7DEDA3F75B7C4AA4BA39CC05D211535B</source_id>
+      <tab_index>768</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>10</x>
+      <y>50</y>
+      <name>owned_by_id</name>
+     </Item>
+    </Relationships>
+   </Item>
+  </Relationships>
+ </Item>
+ <Item type="Field" id="D4B112C175A14A3A9D6C89D9AC24618B" action="edit">
+  <!-- Please note: this AML depends on the "chess" ItemType. Please make sure it exists before running this. -->
+  <propertytype_id>
+   <Item type="Property" action="get" select="id">
+    <name>created_by_id</name>
+    <source_id type="ItemType" keyed_name="chess">BEE3F6B22EB84E219AA1AA2DE5FB84A3</source_id>
+   </Item>
+  </propertytype_id>
+ </Item>
+ <Item type="Field" id="060E24AC77644A679337402ACFBB51D4" action="edit">
+  <!-- Please note: this AML depends on the "chess" ItemType. Please make sure it exists before running this. -->
+  <propertytype_id>
+   <Item type="Property" action="get" select="id">
+    <name>managed_by_id</name>
+    <source_id type="ItemType" keyed_name="chess">BEE3F6B22EB84E219AA1AA2DE5FB84A3</source_id>
+   </Item>
+  </propertytype_id>
+ </Item>
+ <Item type="Field" id="A5EBBD41A2154E54915D1FB43F1D4CAF" action="edit">
+  <!-- Please note: this AML depends on the "chess" ItemType. Please make sure it exists before running this. -->
+  <propertytype_id>
+   <Item type="Property" action="get" select="id">
+    <name>owned_by_id</name>
+    <source_id type="ItemType" keyed_name="chess">BEE3F6B22EB84E219AA1AA2DE5FB84A3</source_id>
+   </Item>
+  </propertytype_id>
+ </Item>
+</AML>

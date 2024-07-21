@@ -1,0 +1,188 @@
+﻿<AML>
+ <Item type="Form" id="EFD1D1EF33364FDEB3C7CED5C10552AB" action="add">
+  <height>80</height>
+  <stylesheet><![CDATA[../styles/default.css]]></stylesheet>
+  <width>699</width>
+  <name>chess</name>
+  <Relationships>
+   <Item type="Body" id="B9AAA2F989D74FE982568BCA3E724216" action="add">
+    <bg_color>#FFFFFF</bg_color>
+    <sort_order>128</sort_order>
+    <source_id keyed_name="chess" type="Form">EFD1D1EF33364FDEB3C7CED5C10552AB</source_id>
+    <Relationships>
+     <Item type="Field" id="90216CD4A8614026928262E977C50519" action="add">
+      <border_width>0</border_width>
+      <css>margin: 1rem;</css>
+      <display_length_unit>px</display_length_unit>
+      <field_type>text</field_type>
+      <font_color>#333333</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Play your move</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <positioning>absolute</positioning>
+      <propertytype_id keyed_name="chess_move" type="Property">ACD55C25C6A045C28FADDC33AC3417B4</propertytype_id>
+      <sort_order>128</sort_order>
+      <source_id keyed_name="B9AAA2F989D74FE982568BCA3E724216" type="Body">B9AAA2F989D74FE982568BCA3E724216</source_id>
+      <tab_index>3072</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>0</x>
+      <y>0</y>
+      <name>chess_move</name>
+     </Item>
+     <Item type="Field" id="7ABDB476B75E4E5CA1C956B3BF6DD77D" action="add">
+      <border_width>0</border_width>
+      <display_length_unit>px</display_length_unit>
+      <field_type>item</field_type>
+      <font_color>#333333</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Arbiter</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <sort_order>768</sort_order>
+      <source_id keyed_name="B9AAA2F989D74FE982568BCA3E724216" type="Body">B9AAA2F989D74FE982568BCA3E724216</source_id>
+      <tab_index>640</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>380</x>
+      <y>10</y>
+      <name>created_by_id</name>
+     </Item>
+     <Item type="Field" id="3AAC46C521894EE0948663515BF653FE" action="add">
+      <border_width>0</border_width>
+      <display_length_unit>px</display_length_unit>
+      <field_type>html</field_type>
+      <font_color>#333333</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>12pt</font_size>
+      <font_weight>bold</font_weight>
+      <html_code><![CDATA[<div style="display: flex; ">
+<ul>
+<li><div>comma separated moves</div></li>
+<li><div>Like bna4 will place black knight on a4</div></li>
+</ul>
+<ul>
+<li><div>And ca4 will clear the c4 square<div></li>
+<li>Example to play e4 as white: "wpe4,ce2" (place pawn on e4 and clear e2)
+<li>Caution! Moves after splitting are not trimmed</li>
+</ul>
+</div>]]></html_code>
+      <is_disabled>0</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Help:</label>
+      <label_position>left</label_position>
+      <list_no_blank>0</list_no_blank>
+      <positioning>absolute</positioning>
+      <sort_order>256</sort_order>
+      <source_id keyed_name="B9AAA2F989D74FE982568BCA3E724216" type="Body">B9AAA2F989D74FE982568BCA3E724216</source_id>
+      <tab_stop>1</tab_stop>
+      <text_align>left</text_align>
+      <x>670</x>
+      <y>10</y>
+      <name>html</name>
+     </Item>
+     <Item type="Field" id="2B16B94C45D04BCDB1FC5051A5367D1E" action="add">
+      <border_width>0</border_width>
+      <display_length_unit>px</display_length_unit>
+      <field_type>item</field_type>
+      <font_color>#333333</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>1</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Black Player</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <sort_order>512</sort_order>
+      <source_id keyed_name="B9AAA2F989D74FE982568BCA3E724216" type="Body">B9AAA2F989D74FE982568BCA3E724216</source_id>
+      <tab_index>896</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>270</x>
+      <y>10</y>
+      <name>managed_by_id</name>
+     </Item>
+     <Item type="Field" id="9C968003BADA4C8AAC97B011612B66F6" action="add">
+      <border_width>0</border_width>
+      <display_length_unit>px</display_length_unit>
+      <field_type>text</field_type>
+      <font_color>#333333</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>10pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>1</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">Next to move</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <propertytype_id keyed_name="next_to_move" type="Property">CA551D0162A74EC68A1F569B7F342B71</propertytype_id>
+      <sort_order>896</sort_order>
+      <source_id keyed_name="B9AAA2F989D74FE982568BCA3E724216" type="Body">B9AAA2F989D74FE982568BCA3E724216</source_id>
+      <tab_index>3200</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>510</x>
+      <y>10</y>
+      <name>next_to_move</name>
+     </Item>
+     <Item type="Field" id="82ED1D36463B4258B10AC0E11747E701" action="add">
+      <border_width>0</border_width>
+      <css>margin: 1rem;</css>
+      <display_length_unit>px</display_length_unit>
+      <field_type>item</field_type>
+      <font_color>#333333</font_color>
+      <font_family>arial, helvetica, sans-serif</font_family>
+      <font_size>8pt</font_size>
+      <font_weight>bold</font_weight>
+      <is_disabled>1</is_disabled>
+      <is_visible>1</is_visible>
+      <label xml:lang="en">White Player</label>
+      <label_position>top</label_position>
+      <list_no_blank>0</list_no_blank>
+      <positioning>absolute</positioning>
+      <sort_order>384</sort_order>
+      <source_id keyed_name="B9AAA2F989D74FE982568BCA3E724216" type="Body">B9AAA2F989D74FE982568BCA3E724216</source_id>
+      <tab_index>768</tab_index>
+      <tab_stop>1</tab_stop>
+      <x>140</x>
+      <y>0</y>
+      <name>owned_by_id</name>
+     </Item>
+    </Relationships>
+   </Item>
+  </Relationships>
+ </Item>
+ <Item type="Field" id="7ABDB476B75E4E5CA1C956B3BF6DD77D" action="edit">
+  <!-- Please note: this AML depends on the "chess" ItemType. Please make sure it exists before running this. -->
+  <propertytype_id>
+   <Item type="Property" action="get" select="id">
+    <name>created_by_id</name>
+    <source_id type="ItemType" keyed_name="chess">BEE3F6B22EB84E219AA1AA2DE5FB84A3</source_id>
+   </Item>
+  </propertytype_id>
+ </Item>
+ <Item type="Field" id="2B16B94C45D04BCDB1FC5051A5367D1E" action="edit">
+  <!-- Please note: this AML depends on the "chess" ItemType. Please make sure it exists before running this. -->
+  <propertytype_id>
+   <Item type="Property" action="get" select="id">
+    <name>managed_by_id</name>
+    <source_id type="ItemType" keyed_name="chess">BEE3F6B22EB84E219AA1AA2DE5FB84A3</source_id>
+   </Item>
+  </propertytype_id>
+ </Item>
+ <Item type="Field" id="82ED1D36463B4258B10AC0E11747E701" action="edit">
+  <!-- Please note: this AML depends on the "chess" ItemType. Please make sure it exists before running this. -->
+  <propertytype_id>
+   <Item type="Property" action="get" select="id">
+    <name>owned_by_id</name>
+    <source_id type="ItemType" keyed_name="chess">BEE3F6B22EB84E219AA1AA2DE5FB84A3</source_id>
+   </Item>
+  </propertytype_id>
+ </Item>
+</AML>

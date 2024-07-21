@@ -1,0 +1,16 @@
+﻿<AML>
+ <Item type="Method" id="201805B71DB94F2FB91F0C8CCBBC3BE6" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[string type = this.getAttribute("type");
+Item itemtype = this.getInnovator().applyAML(@"
+<AML>
+    <Item type=""ItemType"" action=""get"" select=""label_plural"">
+        <name>" + type + @"</name>
+    </Item>
+</AML>
+");
+return this.getInnovator().newError(itemtype.getProperty("label_plural") + " cannot be " + (this.getAttribute("action") == "delete" ? "deleted" : "updated"));]]></method_code>
+  <method_type>C#</method_type>
+  <name>preventDeleteAndModify</name>
+ </Item>
+</AML>

@@ -1,0 +1,70 @@
+﻿<AML>
+ <Item type="Method" id="6B40801D6FED47479E91F1D8A8714358" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[    // Like bna4 will place black knight on a4
+    // And ca4 will clear the c4 square
+    
+    // comma seperated moves
+    string[] moves = this.getProperty("chess_move", "").Split(",");
+    if (
+        String.IsNullOrEmpty(this.getProperty("chess_move")) ||
+        moves.Length == 0
+    ) return this.getInnovator().newError("Move can't be empty!");
+    
+    foreach (string _move in moves) {
+        string move = _move.Trim();
+        Item result = null;
+        string color;
+        string piece;
+        string file;
+        string rank;
+        
+        // If clear call method and continue;
+        if (Char.ToLower(move[0]) == 'c') {
+            color = null;
+            piece = "c";
+            file = "" + Char.ToLower(move[1]);
+            rank = "" + move[2];
+            result = placePiece(this.getAttribute("id"), piece, rank, file, color);
+            if (result.isError()) return result;
+            continue;
+        }
+    
+        if (Char.ToLower(move[0]) == 'w') {
+            color = "white";
+        }
+        else if (Char.ToLower(move[0]) == 'b') {
+            color = "black";
+        } else {
+            return this.getInnovator().newError("Color " + move[0] + " is not valid");
+        }
+        piece = "" + Char.ToLower(move[1]);
+        file = "" + Char.ToLower(move[2]);
+        rank = "" + move[3];
+        result = placePiece(this.getAttribute("id"), piece, rank, file, color);
+        if (result.isError()) return result;
+    }
+    
+    // Apply history
+    Item chessHistory = this.getInnovator().newItem("rel_chess_history", "add");
+    chessHistory.setProperty("chess_move", this.getProperty("chess_move", ""));
+    chessHistory.setProperty("player", this.getProperty("next_to_move", ""));
+    chessHistory.setProperty("automatic", "1");
+    this.addRelationship(chessHistory);
+    return this;
+}
+
+
+private Item placePiece(string chess, string piece, string rank, string file, string color) {
+    Item args = this.getInnovator().newItem();
+    args.setProperty("chess", chess);
+    args.setProperty("piece", piece);
+    args.setProperty("rank", rank);
+    args.setProperty("file", file);
+    if (!String.IsNullOrEmpty(color)) args.setProperty("color", color);
+    return this.getInnovator().applyMethod("chessPlacePiece", args.node.InnerXml);
+]]></method_code>
+  <method_type>C#</method_type>
+  <name>chessMakeMove</name>
+ </Item>
+</AML>

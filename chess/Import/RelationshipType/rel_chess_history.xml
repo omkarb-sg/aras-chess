@@ -1,0 +1,140 @@
+﻿<AML>
+ <Item type="RelationshipType" id="BEF47D2EC2A2407CAF3C31A7FFE57122" action="add" dependencyLevel="0">
+  <auto_search>1</auto_search>
+  <behavior>float</behavior>
+  <copy_permissions>0</copy_permissions>
+  <create_related>0</create_related>
+  <hide_in_all>0</hide_in_all>
+  <inc_rel_key_name>1</inc_rel_key_name>
+  <inc_related_key_name>1</inc_related_key_name>
+  <is_list_type>0</is_list_type>
+  <label xml:lang="en">History</label>
+  <new_show_related>0</new_show_related>
+  <related_notnull>0</related_notnull>
+  <related_option>2</related_option>
+  <relationship_id keyed_name="rel_chess_history" type="ItemType" name="rel_chess_history">
+   <Item type="ItemType" id="9B25F38697BA4BA5B12D90AB05685CDF" action="add">
+    <allow_private_permission>0</allow_private_permission>
+    <auto_search>0</auto_search>
+    <enforce_discovery>0</enforce_discovery>
+    <hide_where_used>0</hide_where_used>
+    <implementation_type>table</implementation_type>
+    <instance_data>REL_CHESS_HISTORY</instance_data>
+    <is_dependent>0</is_dependent>
+    <is_relationship>1</is_relationship>
+    <is_versionable>0</is_versionable>
+    <label xml:lang="en">Chess history</label>
+    <label_plural xml:lang="en">Chess history</label_plural>
+    <revisions keyed_name="Default" type="Revision">7FE395DD8B9F4E1090756A34B733D75E</revisions>
+    <show_parameters_tab>1</show_parameters_tab>
+    <structure_view>tabs off</structure_view>
+    <unlock_on_logout>0</unlock_on_logout>
+    <use_src_access>1</use_src_access>
+    <name>rel_chess_history</name>
+    <Relationships>
+     <Item type="Property" id="37E5ED14D0554BDD8ED600EDB6829EFA" action="add">
+      <column_alignment>left</column_alignment>
+      <data_type>boolean</data_type>
+      <default_value xml:lang="en">0</default_value>
+      <is_federated>1</is_federated>
+      <is_hidden>1</is_hidden>
+      <is_hidden2>1</is_hidden2>
+      <is_indexed>0</is_indexed>
+      <is_keyed>0</is_keyed>
+      <is_multi_valued>0</is_multi_valued>
+      <is_required>0</is_required>
+      <label xml:lang="en">Automatic</label>
+      <range_inclusive>0</range_inclusive>
+      <readonly>0</readonly>
+      <sort_order>3840</sort_order>
+      <source_id keyed_name="rel_chess_history" type="ItemType" name="rel_chess_history">9B25F38697BA4BA5B12D90AB05685CDF</source_id>
+      <track_history>0</track_history>
+      <name>automatic</name>
+     </Item>
+     <Item type="Property" id="EA3616E0CB114F52B76788ABAF4B3747" action="add">
+      <column_alignment>left</column_alignment>
+      <data_type>string</data_type>
+      <default_value xml:lang="en" />
+      <is_federated>0</is_federated>
+      <is_hidden>0</is_hidden>
+      <is_hidden2>0</is_hidden2>
+      <is_indexed>0</is_indexed>
+      <is_keyed>0</is_keyed>
+      <is_multi_valued>0</is_multi_valued>
+      <is_required>1</is_required>
+      <keyed_name_order>2</keyed_name_order>
+      <label xml:lang="en">Chess Move</label>
+      <range_inclusive>0</range_inclusive>
+      <readonly>0</readonly>
+      <sort_order>3584</sort_order>
+      <source_id keyed_name="rel_chess_history" type="ItemType" name="rel_chess_history">9B25F38697BA4BA5B12D90AB05685CDF</source_id>
+      <stored_length>12</stored_length>
+      <track_history>0</track_history>
+      <name>chess_move</name>
+     </Item>
+     <Item type="Property" id="216EDDF5B3234156B55EEE0AB1F670F7" action="add">
+      <column_alignment>left</column_alignment>
+      <data_type>string</data_type>
+      <is_federated>0</is_federated>
+      <is_hidden>0</is_hidden>
+      <is_hidden2>0</is_hidden2>
+      <is_indexed>0</is_indexed>
+      <is_keyed>0</is_keyed>
+      <is_multi_valued>0</is_multi_valued>
+      <is_required>1</is_required>
+      <keyed_name_order>1</keyed_name_order>
+      <label xml:lang="en">Player</label>
+      <range_inclusive>0</range_inclusive>
+      <readonly>0</readonly>
+      <sort_order>3712</sort_order>
+      <source_id keyed_name="rel_chess_history" type="ItemType" name="rel_chess_history">9B25F38697BA4BA5B12D90AB05685CDF</source_id>
+      <stored_length>12</stored_length>
+      <track_history>0</track_history>
+      <name>player</name>
+     </Item>
+     <Item type="Server Event" id="A5EF5C0C0A104F56B91BE2701AC96480" action="add">
+      <event_version>version_1</event_version>
+      <is_required>0</is_required>
+      <related_id keyed_name="preventManualAdd" type="Method">
+       <Item type="Method" action="get" select="id">
+        <name>preventManualAdd</name>
+       </Item>
+      </related_id>
+      <server_event>onBeforeAdd</server_event>
+      <sort_order>384</sort_order>
+      <source_id keyed_name="rel_chess_history" type="ItemType" name="rel_chess_history">9B25F38697BA4BA5B12D90AB05685CDF</source_id>
+     </Item>
+     <Item type="Server Event" id="A4CE9648ED1F4419B35C30AF4A6AC761" action="add">
+      <event_version>version_1</event_version>
+      <is_required>0</is_required>
+      <related_id keyed_name="preventDeleteAndModify" type="Method">
+       <Item type="Method" action="get" select="id">
+        <name>preventDeleteAndModify</name>
+       </Item>
+      </related_id>
+      <server_event>onBeforeDelete</server_event>
+      <sort_order>128</sort_order>
+      <source_id keyed_name="rel_chess_history" type="ItemType" name="rel_chess_history">9B25F38697BA4BA5B12D90AB05685CDF</source_id>
+     </Item>
+     <Item type="Server Event" id="691864FD3718470BB765ABAD0C288034" action="add">
+      <event_version>version_1</event_version>
+      <is_required>0</is_required>
+      <related_id keyed_name="preventDeleteAndModify" type="Method">
+       <Item type="Method" action="get" select="id">
+        <name>preventDeleteAndModify</name>
+       </Item>
+      </related_id>
+      <server_event>onBeforeUpdate</server_event>
+      <sort_order>256</sort_order>
+      <source_id keyed_name="rel_chess_history" type="ItemType" name="rel_chess_history">9B25F38697BA4BA5B12D90AB05685CDF</source_id>
+     </Item>
+    </Relationships>
+   </Item>
+  </relationship_id>
+  <sort_order>256</sort_order>
+  <source_id keyed_name="chess" type="ItemType" name="chess">BEE3F6B22EB84E219AA1AA2DE5FB84A3</source_id>
+  <name>rel_chess_history</name>
+ </Item>
+ <Item type="View" action="delete" where="source_id='9B25F38697BA4BA5B12D90AB05685CDF'" />
+ <Item type="Form" action="delete" where="name='rel_chess_history'" />
+</AML>

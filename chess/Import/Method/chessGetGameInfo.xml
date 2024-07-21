@@ -1,0 +1,20 @@
+﻿<AML>
+ <Item type="Method" id="D28AC2850A7A455AAF501264EDEE8BF6" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[// next_move
+for (var i = 0; i < this.getItemCount(); i++) {
+    // get history count
+    var relCount = this.getInnovator().applyAML(@"<AML>
+        <Item type=""rel_chess_history"" action=""get"" select=""id"">
+            <source_id>" + this.getItemByIndex(i).getAttribute("id") + @"</source_id>
+        </Item>
+    </AML>").getItemCount();
+
+    this.setProperty("next_to_move", relCount % 2 == 0 ? "White" : "Black");
+}
+
+return this;]]></method_code>
+  <method_type>C#</method_type>
+  <name>chessGetGameInfo</name>
+ </Item>
+</AML>

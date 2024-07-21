@@ -1,0 +1,7 @@
+﻿<AML>
+ <Item type="Identity" id="74E2D2E4521544C9941A086295F59D21" action="add">
+  <description>TODO: Internally used by chess to auto promote</description>
+  <is_alias>0</is_alias>
+  <name>Aras Chess</name>
+ </Item>
+</AML>
