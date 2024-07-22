@@ -1,4 +1,4 @@
-﻿<AML>
+<AML>
  <Item type="ItemType" id="BEE3F6B22EB84E219AA1AA2DE5FB84A3" action="add">
   <allow_private_permission>1</allow_private_permission>
   <auto_search>0</auto_search>
@@ -35,7 +35,7 @@
     <readonly>0</readonly>
     <sort_order>3072</sort_order>
     <source_id keyed_name="chess" type="ItemType" name="chess">BEE3F6B22EB84E219AA1AA2DE5FB84A3</source_id>
-    <stored_length>8</stored_length>
+    <stored_length>64</stored_length>
     <track_history>0</track_history>
     <name>chess_move</name>
    </Item>

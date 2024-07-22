@@ -68,7 +68,7 @@
       <readonly>0</readonly>
       <sort_order>3584</sort_order>
       <source_id keyed_name="rel_chess_history" type="ItemType" name="rel_chess_history">9B25F38697BA4BA5B12D90AB05685CDF</source_id>
-      <stored_length>12</stored_length>
+      <stored_length>64</stored_length>
       <track_history>0</track_history>
       <name>chess_move</name>
      </Item>
