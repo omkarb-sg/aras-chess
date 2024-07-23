@@ -10,7 +10,8 @@ for (var i = 0; i < this.getItemCount(); i++) {
         </Item>
     </AML>").getItemCount();
 
-    this.setProperty("next_to_move", relCount % 2 == 0 ? "White" : "Black");
+    this.getItemByIndex(i).setProperty("chess_move", "");
+    this.getItemByIndex(i).setProperty("next_to_move", relCount % 2 == 0 ? "White" : "Black");
 }
 
 return this;]]></method_code>

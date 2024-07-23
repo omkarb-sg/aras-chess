@@ -5,11 +5,13 @@
     // And ca4 will clear the c4 square
     
     // comma seperated moves
-    string[] moves = this.getProperty("chess_move", "").Split(",");
+    string[] moves = this.getProperty("chess_move", "").Split(',');
     if (
         String.IsNullOrEmpty(this.getProperty("chess_move")) ||
         moves.Length == 0
-    ) return this.getInnovator().newError("Move can't be empty!");
+    ){ 
+        return this.getInnovator().newError("Move can't be empty!");
+    }
     
     foreach (string _move in moves) {
         string move = _move.Trim();
@@ -51,6 +53,8 @@
     chessHistory.setProperty("player", this.getProperty("next_to_move", ""));
     chessHistory.setProperty("automatic", "1");
     this.addRelationship(chessHistory);
+    
+    this.removeProperty("chess_move");
     return this;
 }
 
