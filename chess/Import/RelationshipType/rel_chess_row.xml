@@ -213,6 +213,18 @@
       <track_history>0</track_history>
       <name>rank</name>
      </Item>
+     <Item type="Server Event" id="1D991F7C5861433AAFDACF5CA0019511" action="add">
+      <event_version>version_1</event_version>
+      <is_required>0</is_required>
+      <related_id keyed_name="chessColorRows" type="Method">
+       <Item type="Method" action="get" select="id">
+        <name>chessColorRows</name>
+       </Item>
+      </related_id>
+      <server_event>onAfterGet</server_event>
+      <sort_order>128</sort_order>
+      <source_id keyed_name="rel_chess_row" type="ItemType" name="rel_chess_row">9319C679DFD546139E316C1678C98985</source_id>
+     </Item>
     </Relationships>
    </Item>
   </relationship_id>
