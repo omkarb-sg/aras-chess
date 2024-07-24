@@ -1,0 +1,19 @@
+﻿<AML>
+ <Item type="Action" id="DE65A3B8D20547E39F41EA2C931F950C" action="add">
+  <item_query>___is_new___</item_query>
+  <location>server</location>
+  <method keyed_name="chessUndo" type="Method">
+   <Item type="Method" action="get" select="id">
+    <name>chessUndo</name>
+   </Item>
+  </method>
+  <on_complete keyed_name="refreshItemClient" type="Method">
+   <Item type="Method" action="get" select="id">
+    <name>refreshItemClient</name>
+   </Item>
+  </on_complete>
+  <target>none</target>
+  <type>item</type>
+  <name>chessUndoAction</name>
+ </Item>
+</AML>

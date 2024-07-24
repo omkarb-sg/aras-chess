@@ -1,0 +1,91 @@
+﻿<AML>
+ <Item type="Method" id="B03B645E80234EC7B39138D6DC12CB01" action="add">
+  <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
+  <method_code><![CDATA[Innovator inn = this.getInnovator();
+
+// Who is performing Undo?
+// Get current user identity
+Item alias = this.getInnovator().applyAML(@"
+<AML>
+    <Item type=""Alias"" action=""get"" select=""related_id"">
+        <source_id>" + this.getInnovator().getUserID() + @"</source_id>
+    </Item>
+</AML>
+");
+if (alias.getItemCount() == 0) return inn.newError("User alias not found");
+string identity = alias.getItemByIndex(0).getProperty("related_id");
+
+if (identity != this.getProperty("owned_by_id") && identity != this.getProperty("managed_by_id") && identity != this.getProperty("created_by_id")) {
+    return inn.newError("Only arbiter and last player can undo");
+}
+
+// Whose move
+string next_to_move = this.getProperty("next_to_move");
+if (next_to_move == "Black" && identity != this.getProperty("owned_by_id") &&
+    next_to_move == "White" && identity != this.getProperty("managed_by_id")
+) {
+    return inn.newError("You may only undo your own move!");
+}
+
+// Allow undo
+// Delete history through SU
+Aras.Server.Security.Identity suIdentity = Aras.Server.Security.Identity.GetByName("Super User");
+using (CCO.Permissions.GrantIdentity(suIdentity))
+{
+    // Find and delete last history item
+	Item lastHistoryItem = inn.applyAML(@"
+<AML>
+    <Item type=""rel_chess_history"" action=""get"" orderBy=""created_on desc"" maxRecords=""1"">
+        <source_id>" + this.getAttribute("id") + @"</source_id>
+    </Item>
+</AML>");
+    if (lastHistoryItem.getItemCount() == 0) {
+        return inn.newError("No history found, can not undo");
+    }
+    
+    lastHistoryItem.setAttribute("action", "delete");
+    lastHistoryItem.setProperty("force", "1");
+    lastHistoryItem.apply();
+}
+
+// Reset board to blank
+Item chessRows = inn.applyAML(@"
+<AML>
+    <Item type=""rel_chess_row"" action=""get"">
+        <source_id>" + this.getAttribute("id") + @"</source_id>
+    </Item>
+</AML>");
+for (int i = 0; i < chessRows.getItemCount(); i++) {
+    Item row = chessRows.getItemByIndex(i);
+    inn.applyAML(@"
+<AML>
+    <Item type=""rel_chess_row"" action=""edit"" id=""" + row.getAttribute("id") + @""">
+        <a></a><b></b><c></c><d></d><e></e><f></f><g></g><h></h>
+    </Item>
+</AML>");
+}
+inn.applyMethod("chessSetupBoard", "<id>" + this.getAttribute("id") + "</id>");
+
+// History in ascending order
+Item history = inn.applyAML(@"
+<AML>
+    <Item type=""rel_chess_history"" action=""get"" orderBy=""created_on"">
+        <source_id>" + this.getAttribute("id") + @"</source_id>
+    </Item>
+</AML>");
+
+// Apply history
+for (int i = 0; i < history.getItemCount(); i++) {
+    string historyMove = history.getItemByIndex(i).getProperty("chess_move", "");
+    inn.applyMethod("chessMakeMove", "<id>" + this.getAttribute("id") + "</id><chess_move>" + historyMove + "</chess_move>");
+}
+
+
+return inn.newResult("OK");
+
+return this;
+]]></method_code>
+  <method_type>C#</method_type>
+  <name>chessUndo</name>
+ </Item>
+</AML>

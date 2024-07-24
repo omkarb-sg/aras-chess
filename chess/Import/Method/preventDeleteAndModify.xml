@@ -1,7 +1,18 @@
 ﻿<AML>
  <Item type="Method" id="201805B71DB94F2FB91F0C8CCBBC3BE6" action="add">
   <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
-  <method_code><![CDATA[string type = this.getAttribute("type");
+  <method_code><![CDATA[// Will prevent delete unless forced
+// To force, include property <force>
+// Like this
+// <AML>
+// 	<Item type="..." action="delete" id="...">
+// 		<force>1</force>
+// 	</Item>
+// </AML>
+
+if (this.getProperty("force") == "1") return this;
+
+string type = this.getAttribute("type");
 Item itemtype = this.getInnovator().applyAML(@"
 <AML>
     <Item type=""ItemType"" action=""get"" select=""label_plural"">

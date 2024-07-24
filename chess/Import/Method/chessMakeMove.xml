@@ -1,7 +1,8 @@
 ﻿<AML>
  <Item type="Method" id="6B40801D6FED47479E91F1D8A8714358" action="add">
   <execution_allowed_to keyed_name="World" type="Identity">A73B655731924CD0B027E4F4D5FCC0A9</execution_allowed_to>
-  <method_code><![CDATA[    // Like bna4 will place black knight on a4
+  <method_code><![CDATA[    // Must contain <chess_move> and <id>
+    // Like bna4 will place black knight on a4
     // And ca4 will clear the c4 square
     
     // comma seperated moves
@@ -27,7 +28,7 @@
             piece = "c";
             file = "" + Char.ToLower(move[1]);
             rank = "" + move[2];
-            result = placePiece(this.getAttribute("id"), piece, rank, file, color);
+            result = placePiece(this.getProperty("id"), piece, rank, file, color);
             if (result.isError()) return result;
             continue;
         }
@@ -43,7 +44,7 @@
         piece = "" + Char.ToLower(move[1]);
         file = "" + Char.ToLower(move[2]);
         rank = "" + move[3];
-        result = placePiece(this.getAttribute("id"), piece, rank, file, color);
+        result = placePiece(this.getProperty("id"), piece, rank, file, color);
         if (result.isError()) return result;
     }
     
