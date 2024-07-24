@@ -1,7 +1,7 @@
-<AML>
+﻿<AML>
  <Item type="ItemType" id="BEE3F6B22EB84E219AA1AA2DE5FB84A3" action="add">
   <allow_private_permission>1</allow_private_permission>
-  <auto_search>0</auto_search>
+  <auto_search>1</auto_search>
   <enforce_discovery>1</enforce_discovery>
   <hide_where_used>0</hide_where_used>
   <implementation_type>table</implementation_type>
